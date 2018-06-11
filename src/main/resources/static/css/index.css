@@ -1,0 +1,27 @@
+body{
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    background-color: #EEEEEE;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+/*左边树样式*/
+.site-tree{
+    position: fixed;
+    width: 21%;
+    min-height: 100vh;
+    left: 0;
+    border-right:2px solid #e2e2e2;
+    overflow: hidden;
+}
+.site-tree .tree-content{
+    display: inline-block;
+    max-width: 95%;
+    padding-left: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.fresh-tree{
+    position: fixed;
+    bottom: 5px;
+    left: 8%;
+}
