@@ -25,3 +25,52 @@ body{
     bottom: 5px;
     left: 8%;
 }
+
+
+
+/*中间markdown内容区*/
+.site-content{
+    position: absolute;
+    top: 0;
+    left: 21%;
+    width: 76%;
+}
+.site-content .layui-tab{
+    position: relative;
+    min-height: 80vh;
+    z-index: 999;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+.layui-tab-title{
+    position: fixed;
+    left: 21%;
+    width: 76%;
+    background-color: #EEEEEE;
+}
+.layui-tab-content .layui-show{
+    overflow-y: scroll;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    right: 3.01%;
+    left: 21%;
+}
+/*文章目录*/
+.content-tree{
+    padding: 5px 10px;
+}
+/*工具栏样式*/
+.site-tools{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 3%;
+    text-align: center;
+}
+.site-tools .layui-nav-side{
+    right: 0;
+    left: auto;
+    width: 3%;
+    min-width: 45px;
+}
