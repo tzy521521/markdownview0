@@ -45,7 +45,21 @@
 <!--右边工具栏-->
 <div class="site-tools">
     <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
-
+        <li class="layui-nav-item">
+            <a href="javascript:void(0);" onclick="freshArticle()"><i class="fa fa-refresh"></i></a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:void(0);" onclick="uploadMd()"><i class="fa fa-upload" aria-hidden="true"></i></a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:void(0);" onclick="downloadMd()" ><i class="fa fa-download" aria-hidden="true"></i></a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:void(0);" onclick="deleteMd()" ><i class="fa fa-trash" aria-hidden="true"></i></a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:void(0);" onclick="compareFile()"><i></i></a>
+        </li>
     </ul>
 </div>
 <script src="../static/layui/layui.js" th:src="@{static/layui/layui.js}"></script>

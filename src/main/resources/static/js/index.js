@@ -125,3 +125,16 @@ function getArticle(path,id,name) {
         }
     })
 }
+
+//刷新指定文章
+function freshArticle() {}
+//文件上传弹出层
+var upload;
+function uploadMd() {}
+//文件下载
+function downloadMd() {}
+//删除文章
+function deleteMd() {}
+//文件比较弹出层
+var compare;
+function compareFile() {}
