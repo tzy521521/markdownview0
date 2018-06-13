@@ -125,7 +125,6 @@ function getArticle(path,id,name) {
         }
     })
 }
-
 //刷新指定文章
 function freshArticle() {}
 //文件上传弹出层
@@ -134,7 +133,57 @@ function uploadMd() {}
 //文件下载
 function downloadMd() {}
 //删除文章
-function deleteMd() {}
+function deleteMd() {
+    var $ = layui.jquery;
+    var layer = layui.layer;
+    var confirm;
+    //弹层组件-询问框
+    layer.confirm('确定要删除？',function (confirmTitle) {
+        var $curTab = $('.layui-tab-title .layui-this');
+        var path = $curTab.prop('title');
+        var index = $curTab.index();
+        if(path.length >0){
+            $.ajax({
+                type: "POST",
+                url: "delete",
+                dataType:'json',
+                data:{path:path},
+                beforeSend:function () {
+                    confirm = layer.load(1); //换了种风格
+                },
+                success:function (data) {
+                    if (data.status == 0){
+                        layui.element().tabDelete('tabfilter', index);
+                        $('.fresh-tree button').click();
+                        layer.msg(data.msg);
+                    }else {
+                        layer.msg(data.msg);
+                    }
+                },
+                complete:function (XMLHttpRequest, textStatus) {
+                    layer.close(confirm);
+                    layer.close(confirmTitle);
+                }
+            });
+        }
+    })
+}
 //文件比较弹出层
 var compare;
-function compareFile() {}
+function compareFile() {
+    var $ = layui.jquery;
+    var layer = layui.layer;
+    layer.close(compare); //关闭
+    $.ajax({
+        type: "GET",
+        url: "/fragment/compare",
+        dataType:'html',
+        success:function (data) {
+            compare = layer.open({
+                area: ['850px', '580px'],
+                type: 1,
+                content: data //这里content是一个普通的String
+            });
+        }
+    });
+}

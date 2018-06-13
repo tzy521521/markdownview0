@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/font_awesome/css/font-awesome.min.css" th:href="@{static/font_awesome/css/font-awesome.min.css}">
 </head>
 <body style="overflow: hidden">
+
 <!--左边树形菜单-->
 <div class="site-tree">
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
@@ -58,11 +59,13 @@
             <a href="javascript:void(0);" onclick="deleteMd()" ><i class="fa fa-trash" aria-hidden="true"></i></a>
         </li>
         <li class="layui-nav-item">
-            <a href="javascript:void(0);" onclick="compareFile()"><i></i></a>
+            <a href="javascript:void(0);" onclick="compareFile()"><i class="fa fa-file-text-o"></i></a>
         </li>
     </ul>
 </div>
+
 <script src="../static/layui/layui.js" th:src="@{static/layui/layui.js}"></script>
+<script src="../static/js/md2htmlnew.js" th:src="@{static/js/md2htmlnew.js}"></script>
 <script src="../static/js/highlight.min.js" th:src="@{static/js/highlight.min.js}"></script>
 <script src="../static/js/index.js" th:src="@{static/js/index.js}"></script>
 </body>

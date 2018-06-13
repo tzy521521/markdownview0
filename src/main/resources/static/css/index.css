@@ -25,10 +25,14 @@ body{
     bottom: 5px;
     left: 8%;
 }
+.layui-tree li{
+    overflow: inherit;
+}
+/*中间栏样式*/
+.tree-content>ul{
+    width: 90%;
+}
 
-
-
-/*中间markdown内容区*/
 .site-content{
     position: absolute;
     top: 0;
@@ -56,10 +60,6 @@ body{
     right: 3.01%;
     left: 21%;
 }
-/*文章目录*/
-.content-tree{
-    padding: 5px 10px;
-}
 
 /*工具栏样式*/
 .site-tools{
@@ -81,6 +81,61 @@ body{
 .site-tools>ul li{
     padding: 10px 0;
 }
+.site-tools .layui-nav-bar{
+    margin-top: 10px;
+}
 .layui-nav-tree .layui-nav-item a,.layui-nav-tree .layui-this {
     background-color: #393D49;
+}
+.layui-input-block{
+    width: 10%;
+    overflow: inherit;
+}
+
+/*文章目录*/
+.content-tree{
+    padding: 5px 10px;
+}
+.content-tree ul ul{
+    margin-left: .7em;
+}
+.content-tree a{
+    color: #01AAED;
+}
+.content-tree a:hover,.content-tree a:active{
+    color: #1AA094;
+}
+
+/*文本对比样式*/
+.compare-area{
+    background-color: gray;
+}
+.compareTo {
+    margin-left: 15px;
+}
+.showCompare{
+    position: relative;
+}
+.comparediff{
+    max-width: 795px;
+}
+.diff{
+    min-height: 100px;
+    white-space:normal;
+    word-wrap:break-word;
+    width: 100%;
+    overflow-y: auto;
+}
+ins {
+    background-color: #c6ffc6;
+    text-decoration: none;
+}
+del {
+    background-color: #ffc6c6;
+}
+/*比较面板 end*/
+
+/*文件上传面板*/
+.layui-form-select{
+    min-width: 300px;
 }
