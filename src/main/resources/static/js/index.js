@@ -126,12 +126,48 @@ function getArticle(path,id,name) {
     })
 }
 //刷新指定文章
-function freshArticle() {}
+function freshArticle() {
+    var $ = layui.jquery;
+    var $curTab = $('.layui-tab-title .layui-this');
+    var path = $curTab.prop('title');
+    var name = $curTab.text();
+    var id = $curTab.prop('id');
+    var index = $curTab.index();
+    if (path.length >0){
+        layui.element().tabDelete('tabfilter', index);
+        getArticle(path,id,name.substr(0,name.length-1));
+    }
+}
 //文件上传弹出层
 var upload;
-function uploadMd() {}
+function uploadMd() {
+    var $ = layui.jquery;
+    var layer = layui.layer;
+    layer.close(upload); //关闭
+    $.ajax({
+        type: "GET",
+        url: "/fragment/upload",
+        dataType:'html',
+        success:function (data) {
+            upload = layer.open({
+                area: ['500px', '400px'],
+                type: 1,
+                content: data //这里content是一个普通的String
+            });
+        }
+    });
+}
 //文件下载
-function downloadMd() {}
+function downloadMd() {
+    var $ = layui.jquery;
+    var layer = layui.layer;
+    var path = $('.layui-tab-title .layui-this').prop('title');
+    if (path.length <= 0){
+        layer.alert("文件路径错误!");
+    }else {
+        window.location.href = "/downloadFile?path="+path;
+    }
+}
 //删除文章
 function deleteMd() {
     var $ = layui.jquery;
