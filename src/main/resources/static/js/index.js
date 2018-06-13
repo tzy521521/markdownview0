@@ -68,6 +68,16 @@ function getCategory() {
         });
     });
 }
+//刷新目录树
+function freshCategory() {
+    var $ = layui.jquery;
+    var index = $('.layui-tab-title li:last').index();
+    //关闭所有tab标签
+    for (var i=0;i <= index;i++){
+        layui.element().tabDelete('tabfilter', 0);
+    }
+    getCategory();
+}
 //文件显示
 function getArticle(path,id,name) {
     var $ = layui.jquery;
